@@ -19,14 +19,27 @@ document.addEventListener('DOMContentLoaded', function() {
       document.body.style.overflow = navbarMenu.classList.contains('active') ? 'hidden' : '';
     });
 
-    // Close menu when clicking a link
+    // Close menu when clicking/tapping a link
     const navLinks = navbarMenu.querySelectorAll('a');
     navLinks.forEach(link => {
-      link.addEventListener('click', function() {
+      // Use both click and touchend for better iOS support
+      const closeMenu = function(e) {
+        // Prevent ghost clicks on iOS
+        if (e.type === 'touchend') {
+          e.preventDefault();
+          // Navigate after closing menu
+          const href = this.getAttribute('href');
+          setTimeout(() => {
+            window.location.href = href;
+          }, 10);
+        }
         mobileMenuBtn.classList.remove('active');
         navbarMenu.classList.remove('active');
         document.body.style.overflow = '';
-      });
+      };
+
+      link.addEventListener('click', closeMenu);
+      link.addEventListener('touchend', closeMenu);
     });
 
     // Close menu when clicking outside
