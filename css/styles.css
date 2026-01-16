@@ -545,28 +545,32 @@ p {
 
 /* Hero with background image */
 .hero--with-bg {
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  -webkit-transform: translateZ(0);
+  background: none;
+}
+
+.hero--with-bg .hero-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 70%;
+  z-index: -2;
+}
+
+.hero--with-bg .hero-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(10, 10, 10, 0.75) 0%, rgba(10, 10, 10, 0.88) 100%);
+  z-index: -1;
 }
 
 .hero--with-bg::before {
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  transform: none !important;
-  animation: none !important;
-  background:
-    radial-gradient(ellipse at 30% 20%, rgba(217, 119, 6, 0.1) 0%, transparent 50%),
-    radial-gradient(ellipse at 70% 80%, rgba(14, 165, 233, 0.05) 0%, transparent 40%),
-    linear-gradient(180deg, rgba(10, 10, 10, 0.8) 0%, rgba(10, 10, 10, 0.9) 100%) !important;
-  z-index: 0;
+  display: none;
 }
 
 .hero-content {
@@ -768,27 +772,32 @@ p {
 
 /* Page hero with background image */
 .page-hero--with-bg {
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  -webkit-transform: translateZ(0);
+  background: none;
+}
+
+.page-hero--with-bg .hero-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 60%;
+  z-index: -2;
+}
+
+.page-hero--with-bg .hero-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(10, 10, 10, 0.75) 0%, rgba(10, 10, 10, 0.88) 100%);
+  z-index: -1;
 }
 
 .page-hero--with-bg::before {
-  width: 100% !important;
-  height: 100% !important;
-  top: 0 !important;
-  left: 0 !important;
-  transform: none !important;
-  background: linear-gradient(
-    180deg,
-    rgba(10, 10, 10, 0.8) 0%,
-    rgba(10, 10, 10, 0.9) 100%
-  ) !important;
+  display: none;
 }
 
 .page-hero--with-bg::after {
@@ -1097,21 +1106,28 @@ p {
 
 /* CTA section with background image */
 .cta-section--with-bg {
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  -webkit-transform: translateZ(0);
+  background: none;
 }
 
-.cta-section--with-bg::before {
-  background:
-    radial-gradient(ellipse at 30% 50%, rgba(217, 119, 6, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 70% 50%, rgba(14, 165, 233, 0.08) 0%, transparent 40%),
-    linear-gradient(180deg, rgba(10, 10, 10, 0.75) 0%, rgba(10, 10, 10, 0.85) 100%);
+.cta-section--with-bg .hero-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -2;
+}
+
+.cta-section--with-bg .hero-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(10, 10, 10, 0.75) 0%, rgba(10, 10, 10, 0.88) 100%);
+  z-index: -1;
 }
 
 /* ----------------------------------------
