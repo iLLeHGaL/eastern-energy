@@ -545,28 +545,23 @@ p {
 
 /* Hero with background image */
 .hero--with-bg {
-  background: none;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
-.hero--with-bg .hero-bg-image {
+.hero--with-bg .hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 70%;
-  z-index: -2;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 10, 10, 0.82);
+  z-index: 0;
 }
 
-.hero--with-bg .hero-bg-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg, rgba(10, 10, 10, 0.75) 0%, rgba(10, 10, 10, 0.88) 100%);
-  z-index: -1;
+.hero--with-bg .hero-content {
+  z-index: 2;
 }
 
 .hero--with-bg::before {
@@ -772,28 +767,24 @@ p {
 
 /* Page hero with background image */
 .page-hero--with-bg {
-  background: none;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
-.page-hero--with-bg .hero-bg-image {
+.page-hero--with-bg .hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 60%;
-  z-index: -2;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 10, 10, 0.82);
+  z-index: 0;
 }
 
-.page-hero--with-bg .hero-bg-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg, rgba(10, 10, 10, 0.75) 0%, rgba(10, 10, 10, 0.88) 100%);
-  z-index: -1;
+.page-hero--with-bg .container {
+  position: relative;
+  z-index: 2;
 }
 
 .page-hero--with-bg::before {
@@ -1106,28 +1097,23 @@ p {
 
 /* CTA section with background image */
 .cta-section--with-bg {
-  background: none;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
-.cta-section--with-bg .hero-bg-image {
+.cta-section--with-bg .hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  z-index: -2;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 10, 10, 0.82);
+  z-index: 0;
 }
 
-.cta-section--with-bg .hero-bg-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg, rgba(10, 10, 10, 0.75) 0%, rgba(10, 10, 10, 0.88) 100%);
-  z-index: -1;
+.cta-section--with-bg .cta-content {
+  z-index: 2;
 }
 
 /* ----------------------------------------
