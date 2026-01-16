@@ -1562,7 +1562,9 @@ select.form-control {
   flex-shrink: 0;
 }
 
-.footer-certification span {
+.footer-certification .esa-text {
+  display: flex;
+  flex-direction: column;
   font-size: 0.75rem;
   color: var(--color-text-muted);
   line-height: 1.3;
@@ -1570,6 +1572,11 @@ select.form-control {
   border: none !important;
   outline: none !important;
   box-shadow: none !important;
+}
+
+.footer-certification .esa-text span {
+  text-decoration: none !important;
+  border: none !important;
 }
 
 .footer-title {
