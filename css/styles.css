@@ -545,9 +545,13 @@ p {
 
 /* Hero with background image */
 .hero--with-bg {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  background-attachment: scroll;
 }
 
 .hero--with-bg .hero-overlay {
@@ -767,9 +771,13 @@ p {
 
 /* Page hero with background image */
 .page-hero--with-bg {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  background-attachment: scroll;
 }
 
 .page-hero--with-bg .hero-overlay {
@@ -1097,9 +1105,13 @@ p {
 
 /* CTA section with background image */
 .cta-section--with-bg {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  background-attachment: scroll;
 }
 
 .cta-section--with-bg .hero-overlay {
