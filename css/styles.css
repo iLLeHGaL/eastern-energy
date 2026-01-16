@@ -333,23 +333,20 @@ p {
   gap: var(--space-2xl);
 }
 
-.navbar-cta {
+.btn-with-phone {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-xs);
+  line-height: 1.2;
+  padding-top: var(--space-sm);
+  padding-bottom: var(--space-sm);
 }
 
-.navbar-phone {
+.btn-phone {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--color-copper-light);
-  text-decoration: none;
-  transition: var(--transition-fast);
-}
-
-.navbar-phone:hover {
-  color: var(--color-copper);
+  font-size: 0.7rem;
+  opacity: 0.9;
+  margin-top: 2px;
 }
 
 .navbar-links {
