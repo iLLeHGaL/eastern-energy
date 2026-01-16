@@ -333,6 +333,25 @@ p {
   gap: var(--space-2xl);
 }
 
+.navbar-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.navbar-phone {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-copper-light);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.navbar-phone:hover {
+  color: var(--color-copper);
+}
+
 .navbar-links {
   display: flex;
   gap: var(--space-xl);

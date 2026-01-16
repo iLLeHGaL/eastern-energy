@@ -127,30 +127,75 @@ document.addEventListener('DOMContentLoaded', function() {
   const contactForm = document.getElementById('contact-form');
   const applicationForm = document.getElementById('application-form');
 
-  function handleFormSubmit(form, formType) {
+  // Handle contact form submission via Web3Forms
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const originalHTML = submitBtn.innerHTML;
+
+      // Show loading state
+      submitBtn.innerHTML = 'Sending...';
+      submitBtn.disabled = true;
+
+      try {
+        const formData = new FormData(this);
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          // Success
+          submitBtn.innerHTML = 'Message Sent!';
+          submitBtn.style.background = 'var(--color-blue)';
+          this.reset();
+
+          setTimeout(() => {
+            submitBtn.innerHTML = originalHTML;
+            submitBtn.style.background = '';
+            submitBtn.disabled = false;
+          }, 3000);
+        } else {
+          throw new Error(result.message || 'Something went wrong');
+        }
+      } catch (error) {
+        // Error
+        submitBtn.innerHTML = 'Error - Try Again';
+        submitBtn.style.background = 'var(--color-red, #dc2626)';
+
+        setTimeout(() => {
+          submitBtn.innerHTML = originalHTML;
+          submitBtn.style.background = '';
+          submitBtn.disabled = false;
+        }, 3000);
+
+        console.error('Form submission error:', error);
+      }
+    });
+  }
+
+  // Handle application form (careers page) - local only for now
+  function handleLocalFormSubmit(form, formType) {
     form.addEventListener('submit', function(e) {
       e.preventDefault();
 
-      // Get form data
       const formData = new FormData(form);
       const data = Object.fromEntries(formData.entries());
-
-      // Here you would typically send the data to a server
-      // For now, we'll just show a success message
       console.log(`${formType} form submitted:`, data);
 
-      // Show success message
       const submitBtn = form.querySelector('button[type="submit"]');
       const originalText = submitBtn.textContent;
 
-      submitBtn.textContent = 'Message Sent!';
+      submitBtn.textContent = 'Application Submitted!';
       submitBtn.style.background = 'var(--color-blue)';
       submitBtn.disabled = true;
 
-      // Reset form
       form.reset();
 
-      // Reset button after delay
       setTimeout(() => {
         submitBtn.textContent = originalText;
         submitBtn.style.background = '';
@@ -159,12 +204,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  if (contactForm) {
-    handleFormSubmit(contactForm, 'Contact');
-  }
-
   if (applicationForm) {
-    handleFormSubmit(applicationForm, 'Application');
+    handleLocalFormSubmit(applicationForm, 'Application');
   }
 
   // =============================================
