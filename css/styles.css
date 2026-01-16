@@ -546,9 +546,13 @@ p {
 /* Hero with background image */
 .hero--with-bg {
   background-size: cover;
-  background-position: center 70%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-position: center bottom;
   background-repeat: no-repeat;
   background-attachment: scroll;
+  -webkit-transform: translateZ(0);
 }
 
 .hero--with-bg::before {
@@ -765,9 +769,13 @@ p {
 /* Page hero with background image */
 .page-hero--with-bg {
   background-size: cover;
-  background-position: center 60%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-position: center bottom;
   background-repeat: no-repeat;
   background-attachment: scroll;
+  -webkit-transform: translateZ(0);
 }
 
 .page-hero--with-bg::before {
@@ -1090,8 +1098,13 @@ p {
 /* CTA section with background image */
 .cta-section--with-bg {
   background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: scroll;
+  -webkit-transform: translateZ(0);
 }
 
 .cta-section--with-bg::before {
