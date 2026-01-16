@@ -1596,7 +1596,6 @@ select.form-control {
 
 .footer-bottom {
   padding-top: var(--space-xl);
-  border-top: 1px solid var(--color-ash);
   display: flex;
   justify-content: space-between;
   align-items: center;
