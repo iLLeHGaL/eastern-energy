@@ -1575,6 +1575,7 @@ select.form-control {
 }
 
 .footer-certification .esa-text span {
+  display: block;
   text-decoration: none !important;
   border: none !important;
 }
