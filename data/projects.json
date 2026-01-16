@@ -1,0 +1,29 @@
+{
+  "lastUpdated": "2026-01-15",
+  "projects": [
+    {
+      "id": "proj-001",
+      "title": "Commercial Panel Upgrade",
+      "description": "Complete 400A service upgrade for a local restaurant, including new sub-panels and dedicated circuits for commercial kitchen equipment.",
+      "category": "commercial",
+      "image": "assets/images/projects/commercial-panel.jpg",
+      "date": "2025-12"
+    },
+    {
+      "id": "proj-002",
+      "title": "New Home Wiring",
+      "description": "Full electrical installation for a 2,500 sq ft new construction home including smart home pre-wiring and EV charger installation.",
+      "category": "residential",
+      "image": "assets/images/projects/new-home.jpg",
+      "date": "2025-11"
+    },
+    {
+      "id": "proj-003",
+      "title": "Outdoor Lighting Installation",
+      "description": "Landscape lighting design and installation featuring low-voltage LED pathway lights and accent lighting for mature trees.",
+      "category": "residential",
+      "image": "assets/images/projects/outdoor-lighting.jpg",
+      "date": "2025-10"
+    }
+  ]
+}

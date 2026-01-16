@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Join the Eastern Energy team. We're hiring skilled electricians and apprentices. Great benefits, competitive pay, and career growth opportunities.">
+  <meta name="description" content="Explore career opportunities at Eastern Energy. Learn about our team culture, benefits, and what we look for in future team members.">
   <title>Careers - Join Our Team | Eastern Energy</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="assets/images/logo.png" type="image/png">
@@ -20,6 +20,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Services</a></li>
+          <li><a href="projects.html">Projects</a></li>
           <li><a href="careers.html" class="active">Careers</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -128,85 +129,26 @@
     </div>
   </section>
 
-  <!-- Open Positions Section -->
+  <!-- Current Openings Section -->
   <section class="section section--dark">
     <div class="container">
       <div class="section-header reveal">
-        <span class="label">Now Hiring</span>
-        <h2>Open <span class="text-copper">Positions</span></h2>
-        <p>Explore our current opportunities and find your next career move.</p>
+        <span class="label">Careers</span>
+        <h2>Current <span class="text-copper">Openings</span></h2>
+        <p>Check back for future opportunities to join the Eastern Energy team.</p>
       </div>
 
-      <div class="job-card reveal">
-        <div class="job-header">
-          <div class="job-title">
-            <h3>Licensed Electrician</h3>
-            <div class="job-meta">
-              <span>Full-time</span>
-              <span>Experience: 3+ years</span>
-            </div>
-          </div>
-          <a href="#apply" class="btn btn-primary">Apply Now</a>
+      <div class="no-openings-card reveal">
+        <div class="no-openings-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
         </div>
-        <p class="job-description">We're looking for experienced, licensed electricians to join our growing team. You'll work on a variety of residential and commercial projects, from new construction to service calls.</p>
-        <div style="color: var(--color-text-muted);">
-          <strong style="color: var(--color-text-primary);">Requirements:</strong>
-          <ul class="service-list">
-            <li>Valid state electrical license</li>
-            <li>3+ years of experience in residential and/or commercial electrical work</li>
-            <li>Strong troubleshooting and problem-solving skills</li>
-            <li>Valid driver's license and reliable transportation</li>
-            <li>Ability to work independently and as part of a team</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="job-card reveal">
-        <div class="job-header">
-          <div class="job-title">
-            <h3>Electrical Apprentice</h3>
-            <div class="job-meta">
-              <span>Full-time</span>
-              <span>Entry Level</span>
-            </div>
-          </div>
-          <a href="#apply" class="btn btn-primary">Apply Now</a>
-        </div>
-        <p class="job-description">Start your career in the electrical trade with our apprenticeship program. Learn from experienced journeymen while earning competitive wages and working toward your license.</p>
-        <div style="color: var(--color-text-muted);">
-          <strong style="color: var(--color-text-primary);">Requirements:</strong>
-          <ul class="service-list">
-            <li>High school diploma or GED</li>
-            <li>Strong interest in learning the electrical trade</li>
-            <li>Basic math and reading comprehension skills</li>
-            <li>Valid driver's license</li>
-            <li>Willingness to attend trade school classes</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="job-card reveal">
-        <div class="job-header">
-          <div class="job-title">
-            <h3>Service Technician</h3>
-            <div class="job-meta">
-              <span>Full-time</span>
-              <span>Experience: 2+ years</span>
-            </div>
-          </div>
-          <a href="#apply" class="btn btn-primary">Apply Now</a>
-        </div>
-        <p class="job-description">Join our service team to handle residential and light commercial service calls. This role requires excellent customer service skills and the ability to diagnose and repair electrical issues efficiently.</p>
-        <div style="color: var(--color-text-muted);">
-          <strong style="color: var(--color-text-primary);">Requirements:</strong>
-          <ul class="service-list">
-            <li>Valid state electrical license (Journeyman or higher)</li>
-            <li>2+ years of service/repair experience</li>
-            <li>Excellent customer communication skills</li>
-            <li>Strong diagnostic and troubleshooting abilities</li>
-            <li>Clean driving record</li>
-          </ul>
-        </div>
+        <h3>We're Not Currently Hiring</h3>
+        <p>Thank you for your interest in Eastern Energy. While we don't have any open positions at this time, we're always interested in connecting with talented professionals.</p>
+        <p style="color: var(--color-text-dim); margin-bottom: 0;">Feel free to check back later or follow us on social media for updates on future opportunities.</p>
       </div>
     </div>
   </section>
@@ -264,79 +206,6 @@
     </div>
   </section>
 
-  <!-- Application Form Section -->
-  <section id="apply" class="section section--dark">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="label">Get Started</span>
-        <h2>Apply <span class="text-copper">Now</span></h2>
-        <p>Ready to join our team? Submit your application below.</p>
-      </div>
-      <div style="max-width: 700px; margin: 0 auto;">
-        <form id="application-form" class="reveal">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg);">
-            <div class="form-group">
-              <label for="applicant-name">Full Name *</label>
-              <input type="text" id="applicant-name" name="applicant-name" class="form-control" placeholder="John Smith" required>
-            </div>
-            <div class="form-group">
-              <label for="applicant-phone">Phone Number *</label>
-              <input type="tel" id="applicant-phone" name="applicant-phone" class="form-control" placeholder="(555) 123-4567" required>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="applicant-email">Email Address *</label>
-            <input type="email" id="applicant-email" name="applicant-email" class="form-control" placeholder="john@example.com" required>
-          </div>
-          <div class="form-group">
-            <label for="position">Position of Interest *</label>
-            <select id="position" name="position" class="form-control" required>
-              <option value="">Select a position...</option>
-              <option value="licensed-electrician">Licensed Electrician</option>
-              <option value="electrical-apprentice">Electrical Apprentice</option>
-              <option value="service-technician">Service Technician</option>
-              <option value="general">General Application</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="experience">Years of Experience</label>
-            <select id="experience" name="experience" class="form-control">
-              <option value="0">No experience (entry level)</option>
-              <option value="1-2">1-2 years</option>
-              <option value="3-5">3-5 years</option>
-              <option value="5-10">5-10 years</option>
-              <option value="10+">10+ years</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="resume">Resume/CV</label>
-            <div class="file-upload">
-              <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx">
-              <div class="file-upload-text">
-                <strong>Click to upload</strong> or drag and drop<br>
-                PDF, DOC, or DOCX (max 5MB)
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="about-yourself">Tell Us About Yourself *</label>
-            <textarea id="about-yourself" name="about-yourself" class="form-control" placeholder="Share your background, relevant experience, and why you want to join Eastern Energy..." required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
-            Submit Application
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="22" y1="2" x2="11" y2="13"></line>
-              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-            </svg>
-          </button>
-        </form>
-        <p class="text-center mt-3" style="color: var(--color-text-dim); font-size: 0.9rem;">
-          We review all applications and will contact qualified candidates within 5 business days.
-        </p>
-      </div>
-    </div>
-  </section>
-
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
@@ -351,6 +220,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
             <li><a href="careers.html">Careers</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
