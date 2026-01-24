@@ -4,280 +4,246 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no">
-  <meta name="description" content="Eastern Energy - Professional residential and commercial electrical services. Licensed electricians serving Ottawa and surrounding areas with quality workmanship.">
-  <title>Eastern Energy | Professional Electrical Services</title>
-  <link rel="stylesheet" href="css/styles.css?v=5">
+  <meta name="description" content="Eastern Energy - Professional residential and commercial electrical services coming soon to Ottawa and surrounding areas.">
+  <title>Eastern Energy | Coming Soon</title>
+  <link rel="stylesheet" href="css/styles.css?v=6">
   <link rel="icon" href="assets/images/logo.png" type="image/png">
+  <style>
+    .coming-soon-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: var(--space-xl);
+    }
+
+    .coming-soon-page::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background:
+        radial-gradient(ellipse at 30% 20%, rgba(217, 119, 6, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(14, 165, 233, 0.05) 0%, transparent 40%);
+      animation: heroShift 20s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+
+    .coming-soon-content {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+    }
+
+    .coming-soon-logo {
+      width: 180px;
+      height: 180px;
+      margin: 0 auto var(--space-2xl);
+      position: relative;
+    }
+
+    .coming-soon-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(var(--shadow-copper));
+    }
+
+    .coming-soon-logo::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120%;
+      height: 120%;
+      background: var(--gradient-glow);
+      opacity: 0.4;
+      animation: logoPulse 4s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    .coming-soon-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: var(--space-sm) var(--space-lg);
+      background: var(--color-charcoal);
+      border: 1px solid var(--color-copper);
+      border-radius: var(--radius-full);
+      margin-bottom: var(--space-xl);
+    }
+
+    .coming-soon-badge .dot {
+      width: 8px;
+      height: 8px;
+      background: var(--color-copper-light);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .coming-soon-badge span:last-child {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--color-copper-light);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .coming-soon-content h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      margin-bottom: var(--space-lg);
+      color: var(--color-text-primary);
+    }
+
+    .coming-soon-content h1 .text-gradient {
+      display: block;
+    }
+
+    .coming-soon-tagline {
+      font-size: 1.125rem;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-3xl);
+      line-height: 1.7;
+    }
+
+    .coming-soon-contact {
+      padding: var(--space-xl);
+      background: var(--color-charcoal);
+      border: 1px solid var(--color-slate);
+      border-radius: var(--radius-lg);
+    }
+
+    .coming-soon-contact h3 {
+      font-size: 1rem;
+      margin-bottom: var(--space-lg);
+      color: var(--color-text-secondary);
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-sm);
+      color: var(--color-copper-light);
+      font-size: 1rem;
+      transition: var(--transition-fast);
+    }
+
+    .contact-link:hover {
+      color: var(--color-copper-glow);
+    }
+
+    .contact-link svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    .coming-soon-footer {
+      margin-top: var(--space-3xl);
+      padding-top: var(--space-xl);
+      border-top: 1px solid var(--color-slate);
+    }
+
+    .coming-soon-certification {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-sm);
+    }
+
+    .coming-soon-certification img {
+      height: 28px;
+      width: auto;
+    }
+
+    .coming-soon-certification .esa-text {
+      display: flex;
+      flex-direction: column;
+      font-size: 0.7rem;
+      color: var(--color-text-dim);
+      line-height: 1.3;
+      text-align: left;
+    }
+
+    .coming-soon-copyright {
+      margin-top: var(--space-lg);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--color-text-dim);
+    }
+
+    @media (max-width: 480px) {
+      .coming-soon-logo {
+        width: 140px;
+        height: 140px;
+      }
+
+      .contact-links {
+        gap: var(--space-lg);
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="container">
-      <a href="index.html" class="navbar-logo">
-        <img src="assets/images/logo.png" alt="Eastern Energy Logo">
-      </a>
-      <div class="navbar-menu">
-        <ul class="navbar-links">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="careers.html">Careers</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <a href="contact.html" class="btn btn-primary">Get a Quote</a>
+  <main class="coming-soon-page">
+    <div class="coming-soon-content">
+      <div class="coming-soon-logo">
+        <img src="assets/images/logo.png" alt="Eastern Energy">
       </div>
-      <button class="mobile-menu-btn" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </nav>
 
-  <!-- Hero Section -->
-  <section class="hero hero--with-bg" style="background-image: url('assets/images/heroes/hero-home.jpg');">
-    <div class="hero-overlay"></div>
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-logo">
-          <img src="assets/images/logo.png" alt="Eastern Energy">
-        </div>
+      <div class="coming-soon-badge">
+        <span class="dot"></span>
+        <span>Coming Soon</span>
+      </div>
 
-        <div class="hero-badge">
-          <span class="dot"></span>
-          <span>Serving Ottawa & Surrounding Areas</span>
-        </div>
+      <h1>
+        <span class="text-gradient">Eastern Energy</span>
+      </h1>
 
-        <h1>
-          <span class="line">Powering Your</span>
-          <span class="line"><span class="text-gradient highlight">World</span></span>
-        </h1>
+      <p class="coming-soon-tagline">
+        Professional electrical services for homes and businesses. We're getting ready to serve Ottawa and surrounding areas with quality workmanship.
+      </p>
 
-        <p class="tagline">Professional electrical services for homes and businesses. Licensed, insured, and committed to excellence in every connection.</p>
-
-        <div class="hero-buttons">
-          <a href="contact.html" class="btn btn-primary btn-lg">
-            Get a Free Quote
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
+      <div class="coming-soon-contact">
+        <h3>Get in Touch</h3>
+        <div class="contact-links">
+          <a href="tel:+16136120046" class="contact-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
             </svg>
+            (613) 612-0046
           </a>
-          <a href="services.html" class="btn btn-secondary btn-lg">Explore Services</a>
+          <a href="mailto:info@easternenergy.ca" class="contact-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            info@easternenergy.ca
+          </a>
         </div>
+      </div>
 
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <div class="hero-stat-value">24/7</div>
-            <div class="hero-stat-label">Emergency Service</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-value">100%</div>
-            <div class="hero-stat-label">Licensed & Insured</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-value">5-Star</div>
-            <div class="hero-stat-label">Customer Rated</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services Preview Section -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="label">What We Do</span>
-        <h2>Our <span class="text-copper">Services</span></h2>
-        <p>From new construction to repairs, we handle all your electrical needs with expertise and care.</p>
-      </div>
-      <div class="card-grid reveal-stagger">
-        <div class="card reveal">
-          <div class="card-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-              <polyline points="9,22 9,12 15,12 15,22"></polyline>
-            </svg>
-          </div>
-          <h3>Residential</h3>
-          <p>Complete electrical solutions for your home, from new construction wiring to repairs and upgrades.</p>
-        </div>
-        <div class="card reveal">
-          <div class="card-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
-              <rect x="9" y="9" width="6" height="6"></rect>
-              <line x1="9" y1="1" x2="9" y2="4"></line>
-              <line x1="15" y1="1" x2="15" y2="4"></line>
-              <line x1="9" y1="20" x2="9" y2="23"></line>
-              <line x1="15" y1="20" x2="15" y2="23"></line>
-              <line x1="20" y1="9" x2="23" y2="9"></line>
-              <line x1="20" y1="14" x2="23" y2="14"></line>
-              <line x1="1" y1="9" x2="4" y2="9"></line>
-              <line x1="1" y1="14" x2="4" y2="14"></line>
-            </svg>
-          </div>
-          <h3>Commercial</h3>
-          <p>Professional electrical services for businesses, offices, and industrial facilities.</p>
-        </div>
-        <div class="card reveal">
-          <div class="card-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"></polygon>
-            </svg>
-          </div>
-          <h3>Emergency Services</h3>
-          <p>When electrical emergencies strike, our team is ready to respond quickly and effectively.</p>
-        </div>
-      </div>
-      <div class="text-center mt-5 reveal">
-        <a href="services.html" class="btn btn-outline">View All Services</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why Choose Us Section -->
-  <section class="section section--dark">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="label">Why Us</span>
-        <h2>Why Choose <span class="text-copper">Eastern Energy</span></h2>
-        <p>We're committed to delivering exceptional service and quality workmanship on every job.</p>
-      </div>
-      <div class="features-grid reveal-stagger">
-        <div class="feature-item reveal">
-          <div class="feature-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-              <polyline points="22,4 12,14.01 9,11.01"></polyline>
-            </svg>
-          </div>
-          <h4>Licensed & Insured</h4>
-          <p>Fully licensed electricians with comprehensive insurance coverage for your peace of mind.</p>
-        </div>
-        <div class="feature-item reveal">
-          <div class="feature-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <polyline points="12,6 12,12 16,14"></polyline>
-            </svg>
-          </div>
-          <h4>On-Time Service</h4>
-          <p>We respect your time and always arrive when scheduled, ready to work.</p>
-        </div>
-        <div class="feature-item reveal">
-          <div class="feature-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-            </svg>
-          </div>
-          <h4>Quality Guaranteed</h4>
-          <p>We stand behind our work with a satisfaction guarantee on all services.</p>
-        </div>
-        <div class="feature-item reveal">
-          <div class="feature-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
-              <line x1="1" y1="10" x2="23" y2="10"></line>
-            </svg>
-          </div>
-          <h4>Fair Pricing</h4>
-          <p>Transparent, competitive pricing with detailed estimates before any work begins.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="cta-section cta-section--with-bg" style="background-image: url('assets/images/backgrounds/cta-background.jpg');">
-    <div class="hero-overlay"></div>
-    <div class="container">
-      <div class="cta-content reveal">
-        <span class="label">Let's Work Together</span>
-        <h2>Ready to Get Started?</h2>
-        <p>Contact us today for a free consultation and estimate on your electrical project.</p>
-        <a href="contact.html" class="btn btn-primary btn-lg">
-          Request a Quote
-          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <img src="assets/images/logo.png" alt="Eastern Energy">
-          <p>Professional electrical services for residential and commercial properties. Licensed, insured, and dedicated to quality craftsmanship.</p>
-        </div>
-        <div class="footer-column">
-          <h4 class="footer-title">Navigation</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="careers.html">Careers</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h4 class="footer-title">Services</h4>
-          <ul class="footer-links">
-            <li><a href="services.html">Residential</a></li>
-            <li><a href="services.html">Commercial</a></li>
-            <li><a href="services.html">New Construction</a></li>
-            <li><a href="services.html">Repairs</a></li>
-            <li><a href="services.html">Emergency</a></li>
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h4 class="footer-title">Contact</h4>
-          <ul class="footer-links">
-            <li><a href="tel:+16136120046">(613) 612-0046</a></li>
-            <li><a href="mailto:info@easternenergy.ca">info@easternenergy.ca</a></li>
-            <li>St-Pascal, Ontario</li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p class="footer-copyright">&copy; 2026 Eastern Energy. All rights reserved.</p>
-        <div class="footer-certification">
+      <div class="coming-soon-footer">
+        <div class="coming-soon-certification">
           <img src="assets/images/esa-logo-white.svg" alt="Electrical Safety Authority">
           <span class="esa-text"><span>ESA Licensed</span><span>ECRA/ESA #7017921</span></span>
         </div>
-        <div class="footer-social">
-          <a href="#" aria-label="Facebook">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-            </svg>
-          </a>
-          <a href="#" aria-label="Instagram">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-            </svg>
-          </a>
-          <a href="#" aria-label="LinkedIn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-              <rect x="2" y="9" width="4" height="12"></rect>
-              <circle cx="4" cy="4" r="2"></circle>
-            </svg>
-          </a>
-        </div>
+        <p class="coming-soon-copyright">&copy; 2026 Eastern Energy. All rights reserved.</p>
       </div>
     </div>
-  </footer>
-
-  <script src="js/main.js"></script>
+  </main>
 </body>
 </html>
