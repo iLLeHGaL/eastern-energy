@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
           // Send confirmation email to client via EmailJS
           console.log('Web3Forms success, sending EmailJS to:', clientEmail);
           try {
-            const emailResult = await emailjs.send('service_ab10ck5', 'template_eil4dsx', {
+            const emailResult = await emailjs.send('service_bip666r', 'template_eil4dsx', {
               name: clientName,
               email: clientEmail,
               service: clientService,
