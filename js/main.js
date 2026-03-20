@@ -149,7 +149,19 @@ document.addEventListener('DOMContentLoaded', function() {
         const result = await response.json();
 
         if (result.success) {
-          // Success - show modal and reset form
+          // Send confirmation email to client via EmailJS
+          const templateParams = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            service: formData.get('service'),
+          };
+
+          if (typeof emailjs !== 'undefined') {
+            emailjs.send('service_wwos3iq', 'template_eil4dsx', templateParams)
+              .catch(err => console.error('EmailJS error:', err));
+          }
+
+          // Reset form and show success modal
           this.reset();
           submitBtn.innerHTML = originalHTML;
           submitBtn.disabled = false;

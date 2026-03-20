@@ -116,9 +116,6 @@
           <input type="hidden" name="access_key" value="3ea91583-5dd9-4a74-a913-09f90b410279">
           <input type="hidden" name="subject" value="New Contact Form Submission - Eastern Energy">
           <input type="hidden" name="from_name" value="Eastern Energy Website">
-          <input type="hidden" name="autoresponse" value="Thank you for contacting Eastern Energy! We've received your request and will get back to you within 24 hours. If your matter is urgent, please call us directly at (613) 612-0046.">
-          <input type="hidden" name="autoresponse_subject" value="Eastern Energy — We Received Your Request">
-          <input type="hidden" name="autoresponse_from" value="Eastern Energy">
 
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg);">
             <div class="form-group">
@@ -289,6 +286,8 @@
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>emailjs.init('cn6ss76XEJrEMmKJZ');</script>
   <script src="js/main.js"></script>
 </body>
 </html>
