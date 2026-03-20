@@ -2045,6 +2045,81 @@ select.form-control {
   margin: 0 auto var(--space-md);
 }
 
+/* ----------------------------------------
+   Success Modal
+   ---------------------------------------- */
+.success-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.success-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.success-modal {
+  background: var(--color-graphite);
+  border: 1px solid var(--color-ash);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl) var(--space-xl);
+  max-width: 440px;
+  width: 90%;
+  text-align: center;
+  transform: scale(0.9) translateY(20px);
+  transition: transform 0.3s ease;
+  box-shadow: var(--shadow-lg), 0 0 60px rgba(217, 119, 6, 0.15);
+}
+
+.success-modal-overlay.active .success-modal {
+  transform: scale(1) translateY(0);
+}
+
+.success-modal-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(34, 197, 94, 0.15);
+  color: var(--color-success);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-lg);
+}
+
+.success-modal h3 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.success-modal p {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-xs);
+  line-height: 1.6;
+}
+
+.success-modal .success-modal-sub {
+  color: var(--color-text-dim);
+  font-size: 0.875rem;
+  margin-bottom: var(--space-lg);
+}
+
+.success-modal .btn {
+  min-width: 160px;
+}
+
 /* Projects Gallery Responsive */
 @media (max-width: 768px) {
   .projects-grid {

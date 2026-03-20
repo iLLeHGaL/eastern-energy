@@ -149,16 +149,26 @@ document.addEventListener('DOMContentLoaded', function() {
         const result = await response.json();
 
         if (result.success) {
-          // Success
-          submitBtn.innerHTML = 'Message Sent!';
-          submitBtn.style.background = 'var(--color-blue)';
+          // Success - show modal and reset form
           this.reset();
+          submitBtn.innerHTML = originalHTML;
+          submitBtn.disabled = false;
 
-          setTimeout(() => {
-            submitBtn.innerHTML = originalHTML;
-            submitBtn.style.background = '';
-            submitBtn.disabled = false;
-          }, 3000);
+          const modal = document.getElementById('success-modal');
+          if (modal) {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            const closeModal = () => {
+              modal.classList.remove('active');
+              document.body.style.overflow = '';
+            };
+
+            document.getElementById('success-modal-close').addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => {
+              if (e.target === modal) closeModal();
+            });
+          }
         } else {
           throw new Error(result.message || 'Something went wrong');
         }
