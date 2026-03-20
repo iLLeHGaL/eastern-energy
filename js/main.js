@@ -141,6 +141,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
       try {
         const formData = new FormData(this);
+
+        // Capture values before fetch (FormData may be consumed)
+        const clientName = formData.get('name');
+        const clientEmail = formData.get('email');
+        const clientService = formData.get('service');
+
         const response = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           body: formData
@@ -150,15 +156,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (result.success) {
           // Send confirmation email to client via EmailJS
-          const templateParams = {
-            name: formData.get('name'),
-            email: formData.get('email'),
-            service: formData.get('service'),
-          };
-
-          if (typeof emailjs !== 'undefined') {
-            emailjs.send('service_wwos3iq', 'template_eil4dsx', templateParams)
-              .catch(err => console.error('EmailJS error:', err));
+          try {
+            await emailjs.send('service_wwos3iq', 'template_eil4dsx', {
+              name: clientName,
+              email: clientEmail,
+              service: clientService,
+            });
+          } catch (emailErr) {
+            console.error('EmailJS error:', emailErr);
           }
 
           // Reset form and show success modal
