@@ -156,14 +156,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (result.success) {
           // Send confirmation email to client via EmailJS
-          console.log('Web3Forms success, sending EmailJS to:', clientEmail);
           try {
-            const emailResult = await emailjs.send('service_bip666r', 'template_eil4dsx', {
+            await emailjs.send('service_bip666r', 'template_eil4dsx', {
               name: clientName,
               email: clientEmail,
               service: clientService,
             });
-            console.log('EmailJS result:', emailResult);
           } catch (emailErr) {
             console.error('EmailJS error:', emailErr);
           }
